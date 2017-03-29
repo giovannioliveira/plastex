@@ -1,0 +1,26 @@
+name:myBold
+<b class='myBold' tal:content='self/attributes/text'></b>
+
+name:iframe
+<iframe tal:attributes="width self/attributes/width; height self/attributes/height; src self/attributes/src"></iframe>
+
+name:collapse
+<button data-toggle="collapse" tal:attributes="data-target string:#${self/id}" tal:content='self/attributes/text'></button>
+<div class="collapse" tal:attributes="id self/id" tal:content="self"></div>
+
+name:modalbox
+<button type="button" data-toggle="modal" tal:attributes="data-target string:#${self/id}" tal:content='self/attributes/text'></button>
+<div class="modal fade" role="dialog" tal:attributes="id self/id">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" tal:content="self">
+      </div>
+    </div>
+  </div>
+</div>
+
+name:floating
+<div class="floating" tal:attributes="style string:float: ${self/attributes/float}" tal:content="self"></div>

@@ -1,0 +1,17 @@
+.modal-dialog{
+    position: relative;
+    display: table;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: auto;
+    min-width: 33%;
+}
+
+.floating{
+    margin: 10px;
+}
+
+p{
+    text-align: justify;
+    text-indent: 2em;
+}
