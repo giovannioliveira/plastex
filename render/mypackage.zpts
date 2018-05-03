@@ -5,22 +5,37 @@ name:iframe
 <iframe tal:attributes="width self/attributes/width; height self/attributes/height; src self/attributes/src"></iframe>
 
 name:collapse
-<button data-toggle="collapse" tal:attributes="data-target string:#${self/id}" tal:content='self/attributes/text'></button>
-<div class="collapse" tal:attributes="id self/id" tal:content="self"></div>
+<p>
+<button class="btn btn-primary" type="button" data-toggle="collapse" aria-expanded="false" tal:attributes="data-target string:#${self/id}; aria-controls string:#${self/id}" tal:content='self/attributes/text'></button>
+<div class="collapse" tal:attributes="id self/id">
+    <div class="card card-body" tal:content="self">
+    </div>
+</div>
+</p>
 
 name:modalbox
-<button type="button" data-toggle="modal" tal:attributes="data-target string:#${self/id}" tal:content='self/attributes/text'></button>
-<div class="modal fade" role="dialog" tal:attributes="id self/id">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body" tal:content="self">
-      </div>
+<p>
+<button type="button" class="btn btn-primary" data-toggle="modal" tal:attributes="data-target string:#${self/id}"
+        tal:content='self/attributes/text'></button>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+     tal:attributes="id self/id">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" tal:content='self'>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+</p>
 
 name:floating
 <div class="floating" tal:attributes="style string:float: ${self/attributes/float}" tal:content="self"></div>

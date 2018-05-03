@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from plasTeX import Command,Environment
+from plasTeX import Command, Environment
 
 class myBold(Command):
     args = 'text:str'
